@@ -1,0 +1,86 @@
+﻿@model List<To_Do_List_Part1.Models.to_do_task >
+@{
+    ViewData["Title"] = "Tasks";
+}
+
+<style>
+
+    .container-custom {
+        width: 100%;
+        max-width: 1150px;
+        margin: auto;
+    }
+
+    .row-main {
+        display: flex;
+    }
+
+        .row-main.left-col {
+            width: 50%;
+            /*float: left;*/
+        }
+
+        .row-main.righ-col {
+            width: 50%;
+            /*float: right;*/
+        }
+
+    ul.in-grad {
+        padding: 0;
+        list-style-type: none;
+    }
+
+        ul.in-grad li {
+            position: relative;
+            margin-bottom: 12px;
+            font-size: 16px;
+            color: #000;
+            font-weight: 500;
+            padding-left: 20px;
+        }
+
+            ul.in-grad li span {
+                color: darkgray;
+                font-size: 14px;
+                font-style: italic;
+            }
+
+            ul.in-grad li:before {
+                position: absolute;
+                content: '';
+                background: #f1823b;
+                width: 7px;
+                height: 7px;
+                left: 0;
+                top: 8px;
+                border-radius: 100%;
+            }
+
+    section.gradients {
+        padding-bottom: 100px;
+    }
+</style>
+
+
+<section class="gradients">
+    <div class="container-custom">
+        <div class="row-main">
+            <div class="left-col">
+                <h3>Tasks</h3>
+                <ul class="in-grad">
+                    @for (int i = 0; i < Model.Count; i++)
+                     {
+                        <li>@Model[i].Title <span><button onclick="TaskDone(@Model[i].taskId);">Done</button></span></li>
+                     }
+                    </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<script>
+    function TaskDone(id) {
+
+    };
+</script>

@@ -1,0 +1,22 @@
+﻿@model To_Do_List_Part1.Models.to_do_task
+<h1>New Task</h1>
+
+<form method="post" action="">
+    <input type="hidden" asp-for="taskId" />
+    <div>
+        <label asp-for="Title"></label>
+        <input asp-for="Title" />
+        <span asp-validation-for="Title"></span>
+    </div>
+    <div>
+        <label asp-for="Description"></label>
+        <input asp-for="Description" />
+        <span asp-validation-for="Description"></span>
+    </div>
+    <div>
+        <label asp-for="Due_Date"></label>
+        <input asp-for="Due_Date" />
+        <span asp-validation-for="Due_Date"></span>
+    </div>
+    <input type="submit" value="Submit" />
+</form>
